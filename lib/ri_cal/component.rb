@@ -214,7 +214,8 @@ module RiCal
     def export_x_properties_to(export_stream) #:nodoc:
       x_properties.each do |name, props|
         props.each do | prop |
-          export_stream.puts("#{name}:#{prop}")
+          prop = prop.to_s
+          export_stream.puts("#{name}#{prop.start_with?(':') ? '' : ':'}#{prop}")
         end
       end
     end
