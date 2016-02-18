@@ -54,7 +54,7 @@ module RiCal
       end
       
       def for_parent(parent) #:nodoc:
-        if timezone_finder.nil
+        if timezone_finder.nil?
           @timezone_finder = parent
           self
         elsif timezone_finder == parent
